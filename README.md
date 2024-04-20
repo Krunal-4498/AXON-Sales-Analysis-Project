@@ -12,6 +12,9 @@ To overcome these challenges, the company has decided to implement a Business In
 ![Capstone Project_page-0002](https://github.com/Krunal-4498/AXON_A_Classic_Car_Retailer_Sales_Dashboard/assets/134350505/7fa56c1c-57c1-4a86-a162-f395eec482e8)
 ### Geographical Analysis
 ![Capture](https://github.com/Krunal-4498/AXON_A_Classic_Car_Retailer_Sales_Dashboard/assets/134350505/dfd3b315-0022-479a-b4e4-4dc05e304fcf)
+### Report Page Tooltip
+![Screenshot (8)](https://github.com/Krunal-4498/AXON_A_Classic_Car_Retailer_Sales_Dashboard/assets/134350505/97faa74c-c7b2-4dbb-80f6-798a0625582e)
+
 
 
 
@@ -44,7 +47,7 @@ Sales Data : The primary dataset used for analysis is "AXON_sales.sql" containin
 
 ## Data Analysis
 
-1. Count of Orders by Lead Time
+**1. Count of Orders by Lead Time**
 ```sql
 with orders_lead_time as (
     select orderNumber, abs(datediff(orderDate, shippedDate)) as Lead_time_Days
@@ -55,7 +58,7 @@ from orders_lead_time
 group by Lead_time_Days;
 ```
 
-2. Revenue Year-to-Date (YTD)
+**2. Revenue Year-to-Date (YTD)**
 ```sql 
 select sum(quantityOrdered * priceEach)
 from orderdetails od
@@ -68,7 +71,7 @@ and date_format(o.orderDate, '%Y') = (
 );
 ```
 
-3. Revenue Month-to-Date (MTD)
+**3. Revenue Month-to-Date (MTD)**
 ```sql
 select sum(quantityOrdered * priceEach)
 from orderdetails od
@@ -80,6 +83,20 @@ and date_format(o.orderDate, '%Y-%m') = (
     where status = 'Shipped'
 );
 ```
+
+## Results and Findings
+
+The analysis results are summarized as follows:
+
+- **Positive Sales Trend**: Axon's sales have shown a consistent positive trend over the past years, with noticeable peaks observed during the month of November.
+  
+- **Top Performing Product Line**: 'Classic Cars' emerges as the top performing product line among others, indicating its popularity and strong sales performance.
+
+- **Year-to-Date Revenue**: The year-to-date revenue shows a promising increase, with a 12% growth compared to the previous year, reflecting overall business growth.
+
+- **Month-to-Date Revenue**: However, there is a slight decline in month-to-date revenue, lagging behind by 5% compared to the previous month, suggesting a temporary setback in sales performance.
+
+- **Lead Time Analysis**: The analysis reveals that the highest number of orders were received with an 8-day lead time, followed by 7 days and 6 days, indicating patterns in order processing and delivery timelines.
 
 
 
