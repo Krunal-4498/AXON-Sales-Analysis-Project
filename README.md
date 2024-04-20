@@ -43,21 +43,43 @@ Sales Data : The primary dataset used for analysis is "AXON_sales.sql" containin
 5. Top revenue generating customer, product, country?
 
 ## Data Analysis
-####1. Order Counts (by lead time)
-```sql
-with orders_lead_time as 
-(Select orderNumber,abs(datediff(orderDate,shippedDate)) as  Lead_time_Days from Orders)
-Select Lead_time_Days, count(*) as Orders_count from orders_lead_time group by Lead_time_Days;
 
-### 2. Revenue Year-to-Date (YTD)
+1. Count of Orders by Lead Time
 ```sql
-Select sum(quantityOrdered*priceEach) from orderdetails od join orders o on od.orderNumber=o.orderNumber where o.status = 'Shipped'
-and date_format(o.orderDate,'%Y')= (Select date_format(max(orderDate),'%Y') from orders where status = 'Shipped') ;
+with orders_lead_time as (
+    select orderNumber, abs(datediff(orderDate, shippedDate)) as Lead_time_Days
+    from Orders
+)
+select Lead_time_Days, count(*) as Orders_count
+from orders_lead_time
+group by Lead_time_Days;
+```
 
-### 3. Revenue Month-to-Date (MTD)
+2. Revenue Year-to-Date (YTD)
+```sql 
+select sum(quantityOrdered * priceEach)
+from orderdetails od
+join orders o on od.orderNumber = o.orderNumber
+where o.status = 'Shipped'
+and date_format(o.orderDate, '%Y') = (
+    select date_format(max(orderDate), '%Y')
+    from orders
+    where status = 'Shipped'
+);
+```
+
+3. Revenue Month-to-Date (MTD)
 ```sql
-Select sum(quantityOrdered*priceEach) from orderdetails od join orders o on od.orderNumber=o.orderNumber where o.status = 'Shipped'
-and date_format(o.orderDate,'%Y-%m')= (Select date_format(max(orderDate),'%Y-%m') from orders where status = 'Shipped') ;
+select sum(quantityOrdered * priceEach)
+from orderdetails od
+join orders o on od.orderNumber = o.orderNumber
+where o.status = 'Shipped'
+and date_format(o.orderDate, '%Y-%m') = (
+    select date_format(max(orderDate), '%Y-%m')
+    from orders
+    where status = 'Shipped'
+);
+```
 
 
 
