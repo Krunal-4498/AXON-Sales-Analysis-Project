@@ -13,10 +13,12 @@ To overcome these challenges, the company has decided to implement a Business In
 - 📈 Enable management to access accurate and up-to-date sales reports.
 - 💡 Improve the decision-making process within the company.
 
-## Tools and Technologies
+## Data Source 
+Sales Data : The primary dataset used for analysis is "AXON_sales.sql" containing the details about each sales made by the company.
 
-- **Microsoft PowerBI**: A powerful business analytics tool that provides interactive visualizations and business intelligence capabilities.
-- **SQL (Structured Query Language)**: A standard language for managing and manipulating relational databases.
+## Tools
+1. MySQL- Data Cleaning and Updating, Exploratory Data Analysis (EDA).
+2. Power BI- Creating Reports and Dashboards.
 
-## Project Structure
+## 
 
