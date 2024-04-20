@@ -96,7 +96,7 @@ The analysis results are summarized as follows:
 
 - **Month-to-Date Revenue**: However, there is a slight decline in month-to-date revenue, lagging behind by 5% compared to the previous month, suggesting a temporary setback in sales performance.
 
-- **Lead Time Analysis**: The analysis reveals that the highest number of orders were received with an 8-day lead time, followed by 7 days and 6 days, indicating patterns in order processing and delivery timelines.
+- **Lead Time orders Analysis**: The analysis reveals that the highest number of orders were received with an 8-day lead time, followed by 7 days and 6 days, indicating patterns in order processing and delivery timelines.
 
 
 
