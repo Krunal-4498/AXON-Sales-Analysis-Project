@@ -29,5 +29,27 @@ Sales Data : The primary dataset used for analysis is "AXON_sales.sql" containin
 1. MySQL- Data Cleaning and Updating, Exploratory Data Analysis (EDA).
 2. Power BI- Creating Reports and Dashboards.
 
-## 
+## Data Cleaning/Preparation
+1. Checking Dulicate records.
+2. Changing Column Datatypes.
+3. Giving appropriate Column Names.
+4. Removing leading and trailing spaces from column values.
+
+## Exploratory Data Analysis.
+1. What is the Total Revenue (In Millions)?
+2. How many orders we recived in total?
+3. What is the revenue trend?
+4. To how many total customer we served?
+5. Top revenue generating customer, product, country?
+
+## Data Analysis
+1.Count of Orders by lead time?
+```sql
+with orders_lead_time as 
+(Select orderNumber,abs(datediff(orderDate,shippedDate)) as  Lead_time_Days from Orders)
+Select Lead_time_Days, count(*) as Orders_count from orders_lead_time group by Lead_time_Days;
+
+## Data Analysis
+
+
 
