@@ -1,4 +1,4 @@
-# Axon: Classic Car Retail Sales Analysis 🚗📊
+# Axon Classic Car Retail Sales Analysis 🚗📊
 
 ## Overview
 
